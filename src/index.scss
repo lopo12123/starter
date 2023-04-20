@@ -20,9 +20,9 @@ html, body, #root {
 }
 
 button {
+    padding: 10px 20px;
     border-radius: 8px;
     border: 1px solid transparent;
-    padding: 10px 20px;
     color: inherit;
     font-size: 16px;
     font-weight: 500;
@@ -37,10 +37,10 @@ button {
 }
 
 input {
-
+    padding: 10px 20px;
     border-radius: 8px;
     border: 1px solid transparent;
-    padding: 10px 20px;
+    outline: none;
     color: inherit;
     font-size: 16px;
     font-weight: 500;
@@ -51,6 +51,10 @@ input {
 
     &:hover {
         border-color: #646cff;
+    }
+
+    &:focus {
+        border-color: #9a3424;
     }
 }
 
@@ -67,4 +71,40 @@ code {
     width: 50px;
     border: 0.5px dashed #fff;
     opacity: 0.2;
+}
+
+.breath {
+    @keyframes _breath {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    animation: _breath 1s infinite linear;
+}
+
+.blink {
+    @keyframes _blink {
+        0% {
+            opacity: 1;
+        }
+        40% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        60% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    animation: _blink 1s infinite linear;
 }
