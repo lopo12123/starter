@@ -1,5 +1,6 @@
-import {useState} from 'react'
 import './App.css'
+import {useState} from 'react'
+import {Toaster} from "sonner";
 
 import {AddBookMark} from "./components/AddBookMark";
 import {ClockBlock} from "./components/ClockBlock";
@@ -9,6 +10,8 @@ function App() {
 
     return (
         <>
+            <Toaster richColors/>
+
             <ClockBlock/>
 
             <div className="divider"/>

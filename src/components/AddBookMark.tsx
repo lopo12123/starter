@@ -1,10 +1,25 @@
+import {useState} from "react";
+import {toast} from "sonner";
+
 const AddBookMark = () => {
-  return (
-      <div>
-          <input type="text" name="" id=""/>
-          <button>添加</button>
-      </div>
-  )
+    const [url, setUrl] = useState('')
+    const addBookmark = () => {
+        toast.success('hello')
+    }
+
+    return (
+        <div>
+            <input
+                style={{width: 260}}
+                type="text" value={url}
+                placeholder="请输入"
+                onChange={e => setUrl(e.target.value)}/>
+            <button style={{marginLeft: 20}}
+                    onClick={addBookmark}>
+                添加
+            </button>
+        </div>
+    )
 }
 
 export {
