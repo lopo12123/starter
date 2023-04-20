@@ -1,10 +1,15 @@
 import {useState} from "react";
 import {toast} from "sonner";
+import {StorageImpl} from "../scripts/storage";
 
 const AddBookMark = () => {
     const [url, setUrl] = useState('')
     const addBookmark = () => {
-        toast.success('hello')
+        if (!url) toast.error('请输入内容')
+        else {
+            StorageImpl.addSingle([url, new Date().toLocaleString()])
+            toast.success('已添加')
+        }
     }
 
     return (
