@@ -1,4 +1,5 @@
 import {v4} from "uuid";
+import {atom, selector} from "recoil";
 
 export type BookmarkItem = [link: string, date: string]
 
@@ -42,6 +43,21 @@ abstract class StorageImpl {
     }
 }
 
+const SyncMap = atom<Map<string, BookmarkItem>>({
+    key: 'bookmark-map',
+    default: StorageImpl.getAll()
+});
+
+const SyncList = selector({
+    key: 'bookmark-list',
+    get: ({get}) => {
+        const m = get(SyncMap)
+        return Array.from(m.values())
+    }
+})
+
 export {
+    SyncMap,
+    SyncList,
     StorageImpl
 }

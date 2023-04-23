@@ -4,26 +4,26 @@ import {Toaster} from "sonner";
 
 import {AddBookMark} from "./components/AddBookMark";
 import {ClockBlock} from "./components/ClockBlock";
+import {BookmarkList} from "./components/BookmarkList";
+import {RecoilRoot} from "recoil";
 
 function App() {
     const [count, setCount] = useState(0)
 
     return (
-        <>
+        <RecoilRoot>
             <Toaster richColors/>
 
             <ClockBlock/>
 
             <div className="divider"/>
 
-            <div style={{flex: 1, margin: 20}}>
-                list
-            </div>
+            <BookmarkList/>
 
             <div className="divider"/>
 
             <AddBookMark/>
-        </>
+        </RecoilRoot>
     )
 }
 
