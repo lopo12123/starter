@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import {Toaster} from "sonner";
 
 import {AddBookMark} from "./components/AddBookMark";

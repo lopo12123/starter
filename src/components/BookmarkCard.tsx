@@ -10,10 +10,10 @@ export const BookmarkCard = (props: BookmarkCardProps) => {
     return (
         <div className="bookmark-card">
             <div className="link">
-                {link}
+                <b>内容:</b> {link}
             </div>
             <div className="date">
-                <b>创建于</b> {date}
+                <b>创建:</b> {date}
             </div>
         </div>
     )
