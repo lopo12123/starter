@@ -8,6 +8,9 @@
 
 
 .bookmark-list {
+    $scroll-width: 6px;
+    $scroll-color: rgba(255, 255, 255, .3);
+
     width: calc(100% - 200px);
     height: 0;
     flex: 1;
@@ -19,6 +22,20 @@
     grid-auto-flow: dense;
     justify-content: center;
     overflow: hidden auto;
+
+    &::-webkit-scrollbar {
+        width: $scroll-width !important;
+        height: $scroll-width !important;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $scroll-color !important;
+        border-radius: $scroll-width !important;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #00000000 !important;
+        border-radius: $scroll-width !important;
+        opacity: 0 !important;
+    }
 
     .bookmark-card {
         width: 220px;
