@@ -4,7 +4,7 @@ import {StorageImpl, SyncMap} from "../scripts/storage";
 import {useSetRecoilState} from "recoil";
 
 const AddBookMark = () => {
-    const setSyncList = useSetRecoilState(SyncMap)
+    const setSyncMap = useSetRecoilState(SyncMap)
     const [url, setUrl] = useState('')
     const addBookmark = () => {
         if (!url) toast.error('请输入内容')
@@ -12,7 +12,11 @@ const AddBookMark = () => {
             const newItem = [url, new Date().toLocaleString()]
             const newItemKey = StorageImpl.addSingle(newItem)
             setUrl('')
-            setSyncList(prev => ({...prev, [newItemKey]: newItem}))
+            setSyncMap(prev => {
+                const m = new Map(prev)
+                m.set(newItemKey, newItem)
+                return m
+            })
             toast.success('已添加')
         }
     }

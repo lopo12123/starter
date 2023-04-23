@@ -45,15 +45,14 @@ abstract class StorageImpl {
 
 const SyncMap = atom<Map<string, BookmarkItem>>({
     key: 'bookmark-map',
-    default: StorageImpl.getAll()
+    default: StorageImpl.getAll(),
 });
 
 const SyncList = selector({
     key: 'bookmark-list',
     get: ({get}) => {
-        const m = get(SyncMap)
-        return Array.from(m.values())
-    }
+        return Array.from(get(SyncMap).values())
+    },
 })
 
 export {
