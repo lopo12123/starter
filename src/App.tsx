@@ -1,5 +1,4 @@
 import './App.css'
-import {useState} from 'react'
 import {Toaster} from "sonner";
 
 import {AddBookMark} from "./components/AddBookMark";
@@ -8,8 +7,6 @@ import {BookmarkList} from "./components/BookmarkList";
 import {RecoilRoot} from "recoil";
 
 function App() {
-    const [count, setCount] = useState(0)
-
     return (
         <RecoilRoot>
             <Toaster richColors/>
