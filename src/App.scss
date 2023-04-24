@@ -1,3 +1,6 @@
+$scroll-width: 6px;
+$scroll-color: rgba(255, 255, 255, .3);
+
 #root {
     padding: 80px 0;
     display: flex;
@@ -7,13 +10,20 @@
 }
 
 .bookmark-list {
-    $scroll-width: 6px;
-    $scroll-color: rgba(255, 255, 255, .3);
-
     width: calc(100% - 200px);
     height: 0;
     flex: 1;
     margin: 0 100px;
+
+}
+
+.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-empty {
     display: grid;
     grid-template-columns: repeat(auto-fill, 220px);
     grid-template-rows: repeat(auto-fill, 50px);
