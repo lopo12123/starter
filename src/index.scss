@@ -1,5 +1,6 @@
 /* normalize css starts here */
 *, *::before, *::after {
+    position: relative;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -53,7 +54,7 @@ input {
     background-color: #ccc3;
     cursor: text;
     transition: border-color 0.25s;
-    
+
     &::placeholder{
         color: rgba(255, 255, 255, 0.34);
     }

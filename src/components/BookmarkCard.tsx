@@ -1,11 +1,13 @@
 import { BookmarkItem } from "../scripts/storage";
+import IconClose from "../assets/close.png";
 
 export type BookmarkCardProps = {
     item: BookmarkItem
+    onRemove: (id: string) => void
 }
 
 export const BookmarkCard = (props: BookmarkCardProps) => {
-    const [ link, date ] = props.item
+    const [ id, link, date ] = props.item
 
     return (
         <div className="bookmark-card"
@@ -20,6 +22,8 @@ export const BookmarkCard = (props: BookmarkCardProps) => {
             <div className="date">
                 <b>创建:</b> { date }
             </div>
+            <img className="close" src={ IconClose } alt=""
+                 onClick={ e => props.onRemove(id) }/>
         </div>
     )
 }

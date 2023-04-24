@@ -9,7 +9,7 @@ import {RecoilRoot} from "recoil";
 function App() {
     return (
         <RecoilRoot>
-            <Toaster richColors/>
+            <Toaster/>
 
             <ClockBlock/>
 
