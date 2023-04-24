@@ -2,7 +2,7 @@ import { BookmarkItem } from "../scripts/storage";
 import IconClose from "../assets/close.png";
 
 export type BookmarkCardProps = {
-    item: BookmarkItem
+    item: [ id: string, ...res: BookmarkItem ]
     onRemove: (id: string) => void
 }
 

@@ -51,7 +51,7 @@ const SyncMap = atom<Map<string, BookmarkItem>>({
 const SyncList = selector({
     key: 'bookmark-list',
     get: ({ get }) => {
-        return  Array.from(get(SyncMap).entries()).map(([ id, [ link, date ] ]) => [ id, link, date ])
+        return Array.from(get(SyncMap).entries()).map(([ id, [ link, date ] ]) => [ id, link, date ]) as [ id: string, link: string, date: string ][]
     },
 })
 
